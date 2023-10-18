@@ -28,7 +28,7 @@ app.use('/js',express.static(path.resolve(__dirname,"assets/js")))
 //css/style.css
 
 app.get('/', (req, res) => {
-    res.send("Product management system");
+   res.render('index')
 });
 
 app.listen(3000, () => {
