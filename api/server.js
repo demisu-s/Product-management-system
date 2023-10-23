@@ -3,15 +3,21 @@ const express = require('express');
 const app = express();
 const dotenv=require('dotenv')
 const morgan=require('morgan')
-const bodyparser=require('body-parser')
+const bodyParser=require('body-parser')
 const path=require('path')
+const connectDB=require('./server/database/connection')
 
 dotenv.config({path:'config.env'})
 const PORT=process.env.PORT || 8080
 //log request
 app.use(morgan('tiny'))
+
+//mongoDB connection 
+
+connectDB();
+
 //parse request to body-parser
-app.use(bodyparser.urlencoded({extended:true}))
+app.use(bodyParser.urlencoded({extended:true}))
  
 //set view engine
 app.set("view engine","ejs")
@@ -27,9 +33,10 @@ app.use('/js',express.static(path.resolve(__dirname,"assets/js")))
 //the only thing i have to do is just write in this way
 //css/style.css
 
-app.get('/', (req, res) => {
-   res.render('index')
-});
+//load route to server app
+
+app.use('/',require('./server/routes/router'))
+
 
 app.listen(3000, () => {
     console.log(`Server is running on http://localhost:${PORT}`);

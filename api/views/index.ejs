@@ -1,12 +1,36 @@
 <!-- include header -->
-<%-include('include/_header')%>
+<%- include('include/_header') %>
 
-<!-- include header -->
-
-
-
+<!-- Main Section -->
+<main id="site-main">
+    <div class="container">
+        <button class="nnn">
+            <div class="box-nav d-flex-justify-between">
+                <a href="/add-product" class="boarder-shadow">
+                    <span class="text-gradiant">New Product <i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
+                </a>
+            </div>
+        </button>
+        <!-- form Handling -->
+        <form action="/" method="POST">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>No</th>
+                        <th>Product Name</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Quantity in Stock</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%- include('include/_show') %>
+                </tbody>
+            </table>
+        </form>
+    </div>
+</main>
 <!-- include footer -->
-
-<%-include('include/_footer')%>
-
-<!-- include footer -->
+<%- include('include/_footer') %>
