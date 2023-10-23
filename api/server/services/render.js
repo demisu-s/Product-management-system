@@ -22,6 +22,6 @@ exports.update_product = (req, res) => {
       res.render("update_product", { product: productData.data }); // Corrected the variable name
     })
     .catch(err => {
-      res.send(err); 
+      res.send(err);  
     });
 };
