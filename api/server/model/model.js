@@ -14,7 +14,7 @@ var schema = new mongoose.Schema({
         required: true,
     },
     quantity: {
-        type: String,
+        type: String, 
         required: true,
     },
     status: {

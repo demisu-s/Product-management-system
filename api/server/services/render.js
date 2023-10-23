@@ -17,5 +17,11 @@ exports.add_product = (req, res) => {
 };
 
 exports.update_product = (req, res) => {
-  res.render('update_product');
+  axios.get('http://localhost:3000/api/products', { params: { id: req.query.id } })
+    .then(function(productData) {
+      res.render("update_product", { product: productData.data }); // Corrected the variable name
+    })
+    .catch(err => {
+      res.send(err); 
+    });
 };
