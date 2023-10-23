@@ -1,4 +1,5 @@
 # Product-management-system
+
 This web based application use To manage product  
 i built it by using the following technology
 express js,node js,mongoDB,ejs templeting,i also use ajax and jquary 
@@ -20,6 +21,8 @@ run the command "npm install"  to resolve the dependencies
 In config.env file change MongoDB URI to your particular URI
 and make sure connecting database
 after that run the command "npm start" 
+deployment:i deployed on render and you can access by using the following url
+https://product-management-system-t9mi.onrender.com/
 
 let see screenshot of project
 
